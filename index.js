@@ -1,9 +1,10 @@
 const express = require('express');
 const request = require('request');
+require('dotenv').config();
 
 const app = express();
-const PORT = 8001; // Porta local
-const API_ENDPOINT = "https://aplicacao.dominio.br"; // URL da sua API
+const PORT = process.env.PORT || 8001;
+const API_ENDPOINT = process.env.API_ENDPOINT;
 
 app.use((req, res) => {
   const url = `${API_ENDPOINT}${req.url}`;
